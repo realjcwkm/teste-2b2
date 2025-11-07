@@ -21,7 +21,7 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
-        carregarImagens();
+//        carregarImagens();
     }
 
     /**
@@ -110,10 +110,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         String nome = txtLogin.getText();
-        String password = txtPassword.getPassword().toString();
+        String password = new String(txtPassword.getPassword());
+        System.out.println("Password digitado: " + password);
         
         if (nome.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+            return;
         }
         
         TelaMenu telaMenu = new TelaMenu();
@@ -147,7 +149,7 @@ public class TelaLogin extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        FlatDarkLaf.setup();
+        FlatLightLaf.setup();
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
