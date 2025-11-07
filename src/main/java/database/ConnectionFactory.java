@@ -13,10 +13,10 @@ public class ConnectionFactory {
     private static Connection conexao = null;
 
     private static Connection getInstance() throws SQLException {
-        String db = "teste";
+        String db = "petshop";
         String url = "jdbc:mysql://localhost:3306/" + db; //Nome da base de dados
         String user = "root"; //nome do usuário do MySQL
-        String password = "root"; //senha do MySQL
+        String password = "alunoifro"; //senha do MySQL
         Connection conexao = null;
         conexao = DriverManager.getConnection(url, user, password);
         return conexao;
